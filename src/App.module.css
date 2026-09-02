@@ -1,0 +1,26 @@
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.pregunta{
+    font-size: 1.2rem;
+}
+
+.boton{
+    width: 125px;
+    height: 35px;
+    background-image: linear-gradient(90deg,#a3b5d7,#4475d0);
+    border: none;
+    border-radius: 5px;
+    color: #1a4f5d;
+}
+
+.boton:hover{
+   background-image: linear-gradient(90deg,#4475d0,#a3b5d7); 
+}
+
