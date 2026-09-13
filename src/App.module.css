@@ -1,26 +1,17 @@
-.contenedor{
+
+.contenedorPadre{
     width: 100vw;
     height: 100vh;
+    background-image: linear-gradient(145deg,#729ad7,#293b92,#070b2c);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-.pregunta{
-    font-size: 1.2rem;
-}
-
-.boton{
-    width: 125px;
-    height: 35px;
-    background-image: linear-gradient(90deg,#a3b5d7,#4475d0);
-    border: none;
+.formulario{
+    width: 350px;
+    height: 550px;
+    background-color: #ffffff39;
     border-radius: 5px;
-    color: #1a4f5d;
+    box-shadow: 5px 5px 10px;
 }
-
-.boton:hover{
-   background-image: linear-gradient(90deg,#4475d0,#a3b5d7); 
-}
-
