@@ -1,0 +1,40 @@
+.cont{
+    min-height: calc(100vh - 77px);
+    display: grid;
+    grid-template-areas: 
+        'texto imagen'
+    ;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;  
+}
+.contTexto{
+    grid-area: texto;
+}
+.texto{
+ margin: auto;
+ padding: 2rem;
+ width: 450px;
+ height: 100%;
+ text-align: justify;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    0 4px 8px rgba(0, 0, 0, 0.05),
+    0 12px 24px rgba(0, 0, 0, 0.05);
+ ;
+ background-color: var(--blanco-calido);
+ border-radius: 7px;
+}
+.contImagen{
+    grid-area: imagen;
+    padding: 2rem;
+}
+
+.imagen{
+ margin: auto;
+ object-fit: contain;   
+}

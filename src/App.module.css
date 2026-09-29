@@ -1,17 +1,43 @@
-
-.contenedorPadre{
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(145deg,#729ad7,#293b92,#070b2c);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.contGrid{
+    display: grid;
+    grid-template-areas: 
+           'Cabecera' 
+           'Cuerpo'
+           'Pie'
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 77px 1fr 80px;
 }
 
-.formulario{
-    width: 350px;
-    height: 550px;
-    background-color: #ffffff39;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px;
+
+.cabecera{
+    grid-area: Cabecera;
+}
+.cuerpo{
+    grid-area: Cuerpo;
+    background-color: beige;
+}
+.pie{
+    grid-area: Pie;
+    background-color:var(--azulP);
+}
+
+
+.contAdmin{
+    display: grid;
+    grid-template-areas: 
+       'cabeceraAdmin'
+       'cuerpoAdmin' 
+    ;
+    grid-template-columns: 1fr;
+}
+
+.cabeceraAdmin{
+    grid-area: cabeceraAdmin;
+    height: 35px;
+}
+
+.cuerpoAdmin{
+    grid-area: cuerpoAdmin;
+    min-height: calc(100vh - 77px - 35px);
 }

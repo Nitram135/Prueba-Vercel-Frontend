@@ -1,0 +1,165 @@
+.cont{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.ventana{
+    width: 75%;
+    max-width: 400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: var(--metal-cañon-oscuro);
+    border-radius: 32px;
+}
+
+.carril{
+   width: 100%;
+   display: flex;
+   gap: 1rem;
+   padding: 1rem;
+   white-space: nowrap;
+   overflow-x: auto;
+}
+
+.carril::-webkit-scrollbar{
+    display: none;
+}
+
+.elemento{
+    flex-shrink: 0;
+    padding: 5px 15px;
+    color: var(--blanco-calido);
+    background-color: var(--azul-noche);
+}
+
+.elemento:hover{
+    background-color: var(--indigo-intenso);
+    cursor: pointer;
+}
+
+.boton{
+   padding: 3px;
+   font-size: 1.5rem;
+   border-radius: 16px;
+   border: none;
+   background-color: var(--azul-noche);
+   color: var(--blanco-calido);
+}
+.boton:hover{
+background-color: var(--indigo-intenso);
+}
+
+/* esta parte es para la funcion de arrastrar  */
+.contenedor{
+    width: 95%;
+    max-width: 1200px;
+    height: 85vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.columna{
+   width: 50%;
+   max-width: 450px;
+   height: 100% ;
+   background-color: var(--blanco-calido);
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
+   padding: 1rem;
+}
+
+.cuadro{
+    width: 25%;
+    height: auto;
+    padding: 1rem 2rem;
+    background-color: var(--azul-noche);
+    display: flex;
+    justify-content: center;
+    color: var(--blanco-calido);
+    border-radius: 16px;
+    cursor: grab;
+}
+
+.titulo{
+    align-self: flex-start;
+    color: var(--metal-cañon-oscuro);
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+.cuadro:active{
+    cursor: grabbing;
+}
+
+
+
+.inputFecha{
+    width: 200px;
+    padding: 8px;
+    font-size: 1.3rem;
+    border-radius: 16px;
+    border: 1px solid var(--azul-noche);
+}
+
+
+
+.contEtiqueta{
+    width: 50mm;
+    height: 25mm;
+    padding: 0;    
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center ;
+}
+
+.textoEtiqueta{
+    white-space: nowrap;
+    transform: rotate(90deg);
+    font-weight: bold;
+}
+
+
+.contExc{
+width:  200px;
+margin: auto;
+display: flex;
+flex-direction: column;
+}
+
+.inputExc{
+ border-radius: 0;
+ border: 1px solid #000;
+ height: 25px;
+ background-color: var(--beige);
+ 
+}
+
+.inputExc:focus{
+   outline: 1px solid #000;
+}
+
+
+
+
+
+@media print {
+    @page {
+        size: 50mm 25mm;
+        margin: 0;
+    }
+    body{
+        margin: 0;
+    }
+}
