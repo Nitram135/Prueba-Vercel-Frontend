@@ -1,25 +1,38 @@
 import {z} from 'zod';
 
 
-
-const tamañoArchvio = 5*1024*1024;
-const archviosAceptado = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
-
-const usuarioSchema = z.object({
+const datosPersSchema = z.object({
     id: z.string().uuid(),
-    nombre: z.string().min(5,'Minimo 5 letras'),
-    contraseña: z.string().min(5,'Minimo 5 letras'),
-    rol: z.string()
+    nombre: z.string(),
+    apellido: z.string(),
+    fechaNaci: z.date(),
+    dni: z.coerce.number({message:'Debe ser un numero'})    
 })
 
-const tallerSchema = z.object({
-    id: z.string().uuid({message:'Debe ser fromate uuidv7'}),
-    texto:z.string(),
-    posicion:z.coerce.number().max(5,'Solo se puede elejeir hasta la posicion 5'),
-    imagen: z.any()
-    // imagen: z.instanceof(File,{message:'Debe ser un archivo valido'})
-    //          .refine((archivo)=> archivo.size<= tamañoArchvio,{message:'Elarchvio no puede superar los 5MB'})
-    //          .refine((archivo)=> archviosAceptado.includes(archivo.type),{message:'Solo puede ser formato imagen'})
 
+const turnoSchema = z.object({
+    id: z.string().uuid(),
+    ingresoId: z.string(),
+    pedido: z.array(
+        z.object({
+           analisis: z.string().uuid(),
+           resultado: z.string()
+        })
+    )
 })
-export{usuarioSchema,tallerSchema};
+
+
+const listaAnalisisSchema = z.object({
+    codigo: z.coerce.number({message:'Debe ser un numero'}),
+    nombre: z.string(),
+    metodo: z.string(),
+    metodoVista: z.string().optional()
+})
+
+
+const metodosSchema = z.object({
+    nombre: z.string({required_error:'El nombre es obligatorio'}).trim().min(3,'Minimo 3 letras')
+})
+
+
+export{datosPersSchema,turnoSchema,listaAnalisisSchema,metodosSchema};

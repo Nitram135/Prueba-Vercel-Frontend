@@ -24,9 +24,9 @@ export default function NavegacionSuperior() {
 
     const links= (
         <>
-        <NavLink to='/' className={({isActive})=>isActive ? botonLinkActivo : botonLink} onClick={()=>setVerNav(false)}>Inicio</NavLink>
-        <NavLink to='/sobreMi' className={({isActive})=>isActive ? botonLinkActivo: botonLink}  onClick={()=>setVerNav(false)} >Sobre mi</NavLink>
-        <NavLink to='/talleres' className={({isActive})=>isActive ? botonLinkActivo: botonLink}  onClick={()=>setVerNav(false)} >Talleres</NavLink>
+        <NavLink to='/' className={({isActive})=>isActive ? botonLinkActivo : botonLink} onClick={()=>setVerNav(false)}>Recepcion</NavLink>
+        <NavLink to='/sobreMi' className={({isActive})=>isActive ? botonLinkActivo: botonLink}  onClick={()=>setVerNav(false)} >Reactivos</NavLink>
+        <NavLink to='/talleres' className={({isActive})=>isActive ? botonLinkActivo: botonLink}  onClick={()=>setVerNav(false)} >Analisis</NavLink>
         <NavLink to='/contacto' className={({isActive})=>isActive ? botonLinkActivo: botonLink}  onClick={()=>setVerNav(false)} >Contacto</NavLink>
         {usuario && (usuario.rol === 'admin' ? <NavLink to='/administrador' className={({isActive})=>isActive ? botonLinkActivo : botonLink}  onClick={()=>setVerNav(false)} >Administrador</NavLink>: usuario.rol === 'normal' && <NavLink to='/miPerfil' className={({isActive})=>isActive ? botonLinkActivo : botonLink}  onClick={()=>setVerNav(false)} >Mi perfil</NavLink>) }
         {!usuario &&

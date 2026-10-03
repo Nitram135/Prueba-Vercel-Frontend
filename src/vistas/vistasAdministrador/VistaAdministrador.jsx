@@ -230,16 +230,28 @@ function ReactPrint(){
 export default function VistaAdministrador() {
 
   
-
-  const datos = [
-    
-  ]
+  
+const datos = [
+  ['id',['a1','a2','a3']],
+  ['turno',[1,2,3]],
+  ['glucemia',[120,null,84]]
+]
 
 
 return(
 
   <>
     <div className={contExc}>
+      {
+        datos.map(([clave,valor],index)=>(
+          <div key={index}>
+            <div>{clave}</div>
+            {valor.map((resultado,index)=>(
+              <div key={index}>{resultado === null? '*  ':resultado}</div>
+            ))}
+          </div>
+        ))
+      }
     </div>
   
   </>

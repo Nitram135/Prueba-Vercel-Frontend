@@ -135,20 +135,10 @@ background-color: var(--indigo-intenso);
 width:  200px;
 margin: auto;
 display: flex;
-flex-direction: column;
+gap: 1rem;
 }
 
-.inputExc{
- border-radius: 0;
- border: 1px solid #000;
- height: 25px;
- background-color: var(--beige);
- 
-}
 
-.inputExc:focus{
-   outline: 1px solid #000;
-}
 
 
 
