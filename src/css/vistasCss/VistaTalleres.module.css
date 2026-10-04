@@ -10,5 +10,7 @@
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
-    
+    & input{
+        text-transform: uppercase;
+    }
 }

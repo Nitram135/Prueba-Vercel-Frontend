@@ -16,7 +16,7 @@ export default function FiltroBusqueda({control,register,setValue,campo}) {
         const datos  =  await db.metodos.toArray();
         return  datos;
     });
-    const busqueda = useWatch({control,name:`${campo}Vista`, defaultValue:''})
+    const busqueda = useWatch({control,name:`${campo}Vista`, defaultValue:''}).toUpperCase();
 
 
 

@@ -7,6 +7,8 @@ import estiloBusqueda from '../css/componentesCss/FiltroBusqueda.module.css'
 const {cont,contPedido,contPers,contBuscador,elPedido,contElP,el,contInput} = estilos;
 import dayjs from 'dayjs';
 import { v7 } from 'uuid';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { datosPersSchema } from '../configuracion/validacionesZod';
 
 // aqui pondremos el formulario de ingreso de pacientes
 
@@ -16,7 +18,7 @@ function Busqueda ({register,campo,control, setValue,lista,append}){
     const[verLista,setVerLista]= useState(false);
     const[filtro, setFiltro]=useState(null);
 
-    const busqueda = useWatch({control,name:campo,defaultValue:''});
+    const busqueda = useWatch({control,name:campo,defaultValue:''}).toUpperCase();
 
       useEffect(()=>{
 
@@ -98,6 +100,7 @@ export default function VistaPrincipal() {
 
 
 const {register,handleSubmit,formState:{errors},reset,control,setValue,watch}= useForm({
+         resolver: zodResolver(datosPersSchema),
         defaultValues:{
             nombreP:'',
             apellidoP:'',
@@ -141,6 +144,12 @@ const {register,handleSubmit,formState:{errors},reset,control,setValue,watch}= u
         } catch (error) {
             console.log(error)
         }
+    }
+
+
+    const borrar = ()=>{
+        reset();
+        setKeyForm(a => a +1);
     }
 
 
@@ -189,7 +198,7 @@ if(!base){
             </div>
             <div>
                 <button type="submit">Guardar</button>
-                <button type="button" onClick={()=>reset()}>Borrar</button>
+                <button type="button" onClick={borrar}>Borrar</button>
             </div>
         </form>
     </>
