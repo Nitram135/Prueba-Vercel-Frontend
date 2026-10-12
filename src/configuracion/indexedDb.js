@@ -4,7 +4,7 @@ const db = new Dexie('baseDatos');
 
 db.version(1).stores({
     datosPers: 'id, nombre, apellido, fechaNaci, dni',
-    turno: 'id, ingresoId',
+    turno: 'id, idPers, fechaIngreso',
     listaAnalisis: 'id, codigo, nombre, metodo',
     metodos: 'id, nombre'
 })

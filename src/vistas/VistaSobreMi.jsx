@@ -31,7 +31,6 @@ export default function VistaSobreMi() {
           ...datos,
           id:v7()
         }
-        console.log(keyForm)
          await db.metodos.add(nuevosDatos);
          alert('Metodo creado con exito');
          setKeyForm(anterior => anterior +1);
